@@ -12,6 +12,7 @@
 
 #include "TotalManager.h"
 #include "SaveManager.h"
+#include "AssetManager.h"
 
 #include "Scene/TitleScene/TitleScene.h"
 

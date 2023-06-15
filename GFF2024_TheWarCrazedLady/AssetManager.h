@@ -25,10 +25,8 @@ struct FontAsset {
 
 //文字列照合
 
-//アセットの読み込み
-//対応する拡張子：画像(.png)/BGM(.mp3)/SE(.wav)
 bool LoadAsset(const char* FilePath, int UseScene);
 
-//フォントアセットの読み込み
-//Windowsにインストールされているフォントのみ読み込み可
-bool LoadFont(const char* FontName, int UseScene);
+bool GetAsset(const char* AliasName, int Category);
+
+bool StringCheck(const char* targetA, const char* targetB);

@@ -48,14 +48,18 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR 
 	int Length = LastPeriod - LastSlash;
 
 	Alias = Path.substr(LastSlash+1, Length-1);
-	
+
 	//メインループ
 	while (ProcessMessage() == 0) {
 		//バッファの描画内容を削除
 		ClearDrawScreen();
 
 		//シーンの主要処理
-		Scenes[ActiveScene]->Main();
+		//Scenes[ActiveScene]->Main();
+
+		bool result = StringCheck("this is A", "this is A");
+
+		if (result)DrawString(0, 0, "iscollect", GetColor(255, 255, 255));
 
 		//描画内容を表示ウィンドウに描画
 		ScreenFlip();

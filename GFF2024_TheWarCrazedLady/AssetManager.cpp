@@ -61,3 +61,51 @@ bool LoadAsset(const char* FilePath, int UseScene) {
 	//正常に処理が完了したのでtrueを返す
 	return true;
 };
+
+//GetAsset関数：LoadAssetで読み込んだアセットのハンドルを返す
+//見つからなかった場合はfalseを返す
+bool GetAsset(const char* AliasName, int Category) {
+	return false;
+}
+
+//StringCheck関数：文字が一致しているか判別する
+//(GetAsset関数等で仕様)
+bool StringCheck(const char* targetA, const char* targetB) {
+	string TargetA = targetA;
+	string TargetB = targetB;
+
+	int charsize	= 0;
+	int seekA		= 0;
+	int seekB		= 0;
+	while (seekA < TargetA.size()) {
+		string compareA, compareB;
+
+		if (IsDBCSLeadByte(TargetA[seekA]) == 0) {
+			charsize = 1;
+			seekA++;
+		}else {
+			charsize = 2;
+			seekA += 2;
+		}
+		compareA = TargetA.substr(seekA - charsize, charsize);
+
+		if (seekB >= TargetB.size())return false;
+
+		if (IsDBCSLeadByte(TargetB[seekB]) == 0) {
+			charsize = 1;
+			seekB++;
+		}
+		else {
+			charsize = 2;
+			seekB += 2;
+		}
+
+		compareB = TargetB.substr(seekB - charsize, charsize);
+
+		if (compareA.compare(compareB) != 0)return false;
+	}
+
+
+
+	return true;
+};
