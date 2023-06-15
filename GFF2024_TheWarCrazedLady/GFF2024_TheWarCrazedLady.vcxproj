@@ -138,14 +138,20 @@
     <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SaveManager.cpp" />
-    <ClCompile Include="Scene\SplashLogo\Section_ShowLogo.cpp" />
+    <ClCompile Include="Scene\SplashLogo\Section_ShowLogo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Scene\TitleScene\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssetManager.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="SaveManager.h" />
-    <ClInclude Include="Scene\SplashLogo\Section_ShowLogo.h" />
+    <ClInclude Include="Scene\SplashLogo\Section_ShowLogo.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Scene\TitleScene\TitleScene.h" />
     <ClInclude Include="TotalManager.h" />
   </ItemGroup>

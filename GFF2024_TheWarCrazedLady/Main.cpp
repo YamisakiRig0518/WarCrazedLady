@@ -40,6 +40,15 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR 
 	//シーン管理の前準備
 	Scenes.emplace_back(new TitleScene());
 
+	string Path = "ThisisFileName.";
+	string Alias;
+
+	int LastPeriod = Path.find(".");
+	int LastSlash = Path.find("/");
+	int Length = LastPeriod - LastSlash;
+
+	Alias = Path.substr(LastSlash+1, Length-1);
+	
 	//メインループ
 	while (ProcessMessage() == 0) {
 		//バッファの描画内容を削除

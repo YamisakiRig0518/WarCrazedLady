@@ -1,2 +1,5 @@
-﻿  SaveManager.cpp
-  GFF2024_TheWarCrazedLady.vcxproj -> C:\Users\闇咲リグ\Desktop\GFF2024_TheWarCrazedLady\The-War-Crazed-Lady\x64\Debug\GFF2024_TheWarCrazedLady.exe
+﻿  Main.cpp
+C:\Users\闇咲リグ\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(46,33): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\Users\闇咲リグ\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(47,32): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\Users\闇咲リグ\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(82): warning C4715: 'GetObj': 値を返さないコントロール パスがあります。
+  GFF2024_TheWarCrazedLady.vcxproj -> C:\Users\闇咲リグ\Desktop\WarCrazedLady\x64\Debug\GFF2024_TheWarCrazedLady.exe
