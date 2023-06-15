@@ -1,7 +1,7 @@
 #include "Main.h"
 
 //シーン管理用
-vector<SceneClass*> Scenes; int ActiveScene{ 0 };
+vector<SceneClass*> Scenes; int ActiveScene{ Start_Scene };
 
 int _stdcall wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR lpCmdline, _In_ int nShowCmd) {
 	//ウィンドウモードに設定
@@ -38,28 +38,21 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR 
 	//ここに自作関数を追加
 
 	//シーン管理の前準備
+	Scenes.emplace_back(new ShowLogo());
 	Scenes.emplace_back(new TitleScene());
 
-	string Path = "ThisisFileName.";
-	string Alias;
-
-	int LastPeriod = Path.find(".");
-	int LastSlash = Path.find("/");
-	int Length = LastPeriod - LastSlash;
-
-	Alias = Path.substr(LastSlash+1, Length-1);
-
+	Scenes[ActiveScene]->Initialize();
 	//メインループ
 	while (ProcessMessage() == 0) {
+		//ブレンドモードや描画輝度の設定を一応戻しておく
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+		SetDrawBright(255, 255, 255);
+
 		//バッファの描画内容を削除
 		ClearDrawScreen();
 
 		//シーンの主要処理
-		//Scenes[ActiveScene]->Main();
-
-		bool result = StringCheck("this is A", "this is A");
-
-		if (result)DrawString(0, 0, "iscollect", GetColor(255, 255, 255));
+		Scenes[ActiveScene]->Main();
 
 		//描画内容を表示ウィンドウに描画
 		ScreenFlip();
@@ -82,5 +75,28 @@ ObjectClass* GetObj(list<unique_ptr<ObjectClass>>& base, int ID) {
 		}
 
 		return nullptr;
+	}
+};
+
+//シーン切り替え（該当するシーンが無ければ切り替わらない）
+void SetScene(int SceneID) {
+	bool isComplete = false;
+	
+	for (auto i = Scenes.begin(); i != Scenes.end(); i++) {
+		if (SceneID == (*i)->SceneID) {
+			//シーンの終了処理
+			Scenes[ActiveScene]->Reset();
+
+			//シーンで使ったアセットのアンロード
+			DeleteAsset_Scene(ActiveScene);
+
+			//移動先のシーンの初期化処理
+			(*i)->Initialize();
+
+			//実行中シーンのIDを変更してシーン変更完了
+			ActiveScene = (*i)->SceneID;
+
+			break;
+		}
 	}
 };

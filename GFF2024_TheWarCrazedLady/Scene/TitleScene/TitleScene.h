@@ -3,9 +3,10 @@
 
 class TitleScene : public SceneClass{
 public:
-	TitleScene() {};
+	TitleScene();
 	~TitleScene() {};
 
 	void Initialize();	//タイトルシーンの初期化処理
 	void Main();		//タイトルシーンの主要処理
+	void Reset();		//タイトルシーンの終了処理
 };

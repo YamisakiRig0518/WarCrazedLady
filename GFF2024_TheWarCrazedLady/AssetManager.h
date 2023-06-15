@@ -22,11 +22,8 @@ struct FontAsset {
 	const int	FontSize;				//フォントサイズ
 	const int	UseScene;				//アセットが使われる場面(-1の場合はシステム全体で利用している扱いになる)
 };
+bool	LoadAsset			(const char* FilePath, int UseScene);
+int		GetAsset			(const char* AliasName, int Category);
+void	DeleteAsset_Scene	(int TargetScene);
 
-//文字列照合
-
-bool LoadAsset(const char* FilePath, int UseScene);
-
-bool GetAsset(const char* AliasName, int Category);
-
-bool StringCheck(const char* targetA, const char* targetB);
+bool	StringCheck			(const char* targetA, const char* targetB);

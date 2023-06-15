@@ -61,7 +61,6 @@ void SaveMetaParameter() {
 	fclose(file);
 };
 
-
 void GetMetaData(MetaData* Dest) {
 	memcpy_s(Dest, sizeof(MetaParam), MetaParam, sizeof(MetaParam));
 };

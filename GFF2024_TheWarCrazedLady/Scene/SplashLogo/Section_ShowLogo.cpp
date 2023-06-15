@@ -2,15 +2,15 @@
 #include "Scene/SplashLogo/Section_ShowLogo.h"
 
 ShowLogo::ShowLogo() {
-	
+	SceneID = Scene_Logo;
 };
 
 void ShowLogo::Initialize() {
 	SequenceRandomize(); //ƒƒS•\Ž¦‡‚ðƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ’è
 	
 	SeqStart = GetNowCount();
-	LoadData("image/LogoA.png",SectionID);
-	LoadData("image/LogoB.png", SectionID);
+	LoadAsset("Scene/SplashLogo/image/LogoA.png", SceneID);
+	LoadAsset("Scene/SplashLogo/image/LogoB.png", SceneID);
 
 	drawbufferA = MakeScreen(1920,366, TRUE);
 
@@ -46,7 +46,7 @@ void ShowLogo::Main() {
 		DrawRectGraph(60 + Logodata[i][0], Logodata[i][1], //Dest
 			Logodata[i][0], Logodata[i][1],
 			Logodata[i][2], Logodata[i][3],
-			GetHandle(GRAPH, "LogoA"), TRUE, FALSE, FALSE);
+			GetAsset("LogoA",IMAGE), TRUE, FALSE, FALSE);
 
 		Atotals += Logo_Alpha[i];
 	}
@@ -69,17 +69,17 @@ void ShowLogo::Main() {
 	DrawRectGraph(BarLength[0]+60 + Logodata[11][0], Logodata[11][1],
 		(Logodata[11][0]+ BarLength[0]), Logodata[11][1],
 		Logodata[11][2], Logodata[11][3],
-		GetHandle(GRAPH, "LogoB"), TRUE, FALSE, FALSE);
+		GetAsset("LogoB",IMAGE), TRUE, FALSE, FALSE);
 	
 	DrawRectGraph(60 + Logodata[12][0], Logodata[12][1] + BarLength[1],
 		Logodata[12][0], Logodata[12][1],
 		Logodata[12][2], Logodata[12][3]-BarLength[1],
-		GetHandle(GRAPH,"LogoB"), TRUE, FALSE, FALSE);
+		GetAsset("LogoB",IMAGE), TRUE, FALSE, FALSE);
 	
 	DrawRectGraph(60 + Logodata[13][0], Logodata[13][1],
 		Logodata[13][0], Logodata[13][1],
 		Logodata[13][2]-BarLength[2], Logodata[13][3],
-		GetHandle(GRAPH, "LogoB"), TRUE, FALSE, FALSE);
+		GetAsset("LogoB", IMAGE), TRUE, FALSE, FALSE);
 
 	if (phase == 0 && Sequence >= 11 && Atotals >= 2805) {
 		msCount = GetNowCount();
@@ -93,7 +93,7 @@ void ShowLogo::Main() {
 			AllAlpha_int -= 5;
 		}else {
 			phase = 3;
-			SetSection("MusicSelect");
+			SetScene(Scene_Title);
 		}
 	}
 
@@ -101,10 +101,10 @@ void ShowLogo::Main() {
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, AllAlpha_int);
 	
 	SetDrawScreen(DX_SCREEN_BACK);
-	DrawFillBox(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, GetColor(255, 255, 255));
+	DrawFillBox(0, 0, Window_Width, Window_Height, GetColor(255, 255, 255));
 	DrawExtendGraph(400, 312, 880, 404, drawbufferA, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, AllAlpha_int);
-	DrawStringCenter(419,"P R E S E N T S",0,0,0);
+	//DrawStringCenter(419,"P R E S E N T S",0,0,0);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 };
 
@@ -129,5 +129,7 @@ void ShowLogo::Reset() {
 	msCount = 0;
 	phase = 0;
 
+
+	SetDrawScreen(DX_SCREEN_BACK);
 	DeleteGraph(drawbufferA);
 };

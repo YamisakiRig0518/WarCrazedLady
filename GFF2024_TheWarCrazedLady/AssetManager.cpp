@@ -18,7 +18,7 @@ bool LoadAsset(const char* FilePath, int UseScene) {
 	//ファイル名を取り出す為に最後尾の「/」と「.」の位置を取得
 	//そこからファイル名の位置を割り出して「ファイル名」の長さを求めている
 	int LastPeriod = FilePath_STR.find(".");
-	int LastSlash = FilePath_STR.find("/");
+	int LastSlash = FilePath_STR.find_last_of("/");
 	int FileLength = LastPeriod - LastSlash;
 
 	//カテゴリ判別
@@ -64,8 +64,17 @@ bool LoadAsset(const char* FilePath, int UseScene) {
 
 //GetAsset関数：LoadAssetで読み込んだアセットのハンドルを返す
 //見つからなかった場合はfalseを返す
-bool GetAsset(const char* AliasName, int Category) {
-	return false;
+int GetAsset(const char* AliasName, int Category) {
+	
+	//名前が完全に一致尚且つカテゴリが同じの場合はハンドルを返す
+	for (int i = 0; i < Assets.size(); i++) {
+		if (StringCheck(AliasName, Assets[i]->AliasName) &&
+			Category == Assets[i]->Category) {
+			return Assets[i]->HandleID;
+		}
+	}
+
+	return -1;
 }
 
 //StringCheck関数：文字が一致しているか判別する
@@ -109,3 +118,32 @@ bool StringCheck(const char* targetA, const char* targetB) {
 
 	return true;
 };
+
+//DeleteAsset_Scene関数：指定したシーンで使われているアセットを全てアンロード
+//（シーンチェンジ時に実行される）
+void DeleteAsset_Scene(int TargetScene) {
+	auto iterator = Assets.begin();
+
+	while (iterator != Assets.end()) {
+		int AssetCat = (*iterator)->Category;
+		int AssetScn = (*iterator)->UseScene;
+		int AssetHnd = (*iterator)->HandleID;
+
+		if (AssetScn == TargetScene) {
+			switch (AssetCat) {
+			case IMAGE:
+				DeleteGraph(AssetHnd);
+				break;
+
+			case BGM:
+			case SE:
+				DeleteSoundMem(AssetHnd);
+				break;
+			}
+			iterator = Assets.erase(iterator);
+		}else {
+			iterator++;
+		}
+	}
+};
+

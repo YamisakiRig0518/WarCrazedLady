@@ -1,6 +1,11 @@
-﻿  Main.cpp
-C:\dxlib\DxLib.h(3344,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
-C:\Users\GA4\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(46,33): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
-C:\Users\GA4\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(47,32): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
-C:\Users\GA4\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(86): warning C4715: 'GetObj': 値を返さないコントロール パスがあります。
-  GFF2024_TheWarCrazedLady.vcxproj -> C:\Users\GA4\Desktop\WarCrazedLady\x64\Debug\GFF2024_TheWarCrazedLady.exe
+﻿  AssetManager.cpp
+C:\Users\闇咲リグ\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\AssetManager.cpp(20,41): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\Users\闇咲リグ\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\AssetManager.cpp(21,48): warning C4267: '初期化中': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  Main.cpp
+  SaveManager.cpp
+  Section_ShowLogo.cpp
+C:\Users\闇咲リグ\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Scene\SplashLogo\Section_ShowLogo.cpp(45,51): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  TitleScene.cpp
+  コードを生成中...
+C:\Users\闇咲リグ\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(79): warning C4715: 'GetObj': 値を返さないコントロール パスがあります。
+  GFF2024_TheWarCrazedLady.vcxproj -> C:\Users\闇咲リグ\Desktop\WarCrazedLady\x64\Debug\GFF2024_TheWarCrazedLady.exe

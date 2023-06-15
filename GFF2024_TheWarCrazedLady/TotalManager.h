@@ -4,6 +4,12 @@
 
 using namespace std;
 
+//シーン列挙
+enum Scenes {
+	Scene_Logo,
+	Scene_Title,
+};
+
 //実数型２次元座標の構造体
 struct Vector2 {
 	float x{ 0.0f };
@@ -17,8 +23,9 @@ public :
 
 	virtual void Initialize()	= 0;	//シーンの初期化処理
 	virtual void Main()			= 0;	//シーンの主要処理
+	virtual void Reset()		= 0;	//シーンの終了処理
 
-	int SceneID{ 0 };					//シーンID
+	int SceneID;					//シーンID
 };
 
 //オブジェクト用の基底クラス

@@ -1,6 +1,8 @@
 #pragma once
 #include "Main.h"
+#include "AssetManager.h"
 #include "TotalManager.h"
+
 constexpr int LogoLength = 14;
 constexpr int interval = 30; //100frame
 constexpr float fadespeed = 6.5f; // 0.25/f
@@ -40,9 +42,10 @@ public:
 
 		}
 	};
+
 private:
 	//ロゴの文字座標とサイズデータ
-	float Logodata[LogoLength][4] = {
+	int Logodata[LogoLength][4] = {
 		//始点と範囲(終点は[始点+範囲]の合計から算出)
 		{  33, 18,  158,252}, //Y(1)
 		{ 201, 91,  135,179}, //a(2)

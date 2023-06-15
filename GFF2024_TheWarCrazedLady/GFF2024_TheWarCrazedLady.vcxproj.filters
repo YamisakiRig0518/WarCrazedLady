@@ -19,9 +19,6 @@
     <Filter Include="ソース ファイル\TitleScene">
       <UniqueIdentifier>{284a1d3e-0733-4c59-aed0-b0f2193400f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Functions">
-      <UniqueIdentifier>{0e856814-1c2a-4e34-8a87-9ace5d79dfd8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\LogoScene">
       <UniqueIdentifier>{64aabd56-f7fe-421a-b554-c88947d68c3a}</UniqueIdentifier>
     </Filter>
