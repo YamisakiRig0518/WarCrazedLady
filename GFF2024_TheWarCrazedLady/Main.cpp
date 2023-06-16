@@ -43,8 +43,6 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR 
 
 	Scenes[ActiveScene]->Initialize();
 	 
-	int y = 0;
-	int y2 = 0;
 	//メインループ
 	while (ProcessMessage() == 0) {
 		//ブレンドモードや描画輝度の設定を一応戻しておく
@@ -55,14 +53,8 @@ int _stdcall wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR 
 		ClearDrawScreen();
 
 		//シーンの主要処理
-		//Scenes[ActiveScene]->Main();
+		Scenes[ActiveScene]->Main();
 		
-		if (HitButton(CMG_DECIDE, true, 1000, 100))y+=20;
-		if (HitButton(CMG_CANCEL, true, 1000, 100))y2 += 20;
-		
-		DrawString(0, y, "AAAAAAA", GetColor(255, 255, 255));
-		DrawString(100, y2, "BBBBBB", GetColor(255, 255, 255));
-
 		//描画内容を表示ウィンドウに描画
 		ScreenFlip();
 	}
@@ -109,3 +101,4 @@ void SetScene(int SceneID) {
 		}
 	}
 };
+

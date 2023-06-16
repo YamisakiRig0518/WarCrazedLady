@@ -36,3 +36,4 @@ ObjectClass* GetObj(list<unique_ptr<ObjectClass>>&, int ID);
 
 //ƒV[ƒ“Ø‚è‘Ö‚¦
 void SetScene(int SceneID);
+

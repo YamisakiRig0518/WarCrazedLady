@@ -22,16 +22,6 @@ ButtonStat BtnStatus[CMng_ControlKeys] = {
 	{PAD_INPUT_3		, 0 , CMG_INVENTORY	}
 };
 
-//キーボード入力判定用
-int cm_count	= 0;
-int cm_wait1	= 0;
-int cm_wait2	= 0;
-
-//ゲームパット入力判定用
-int cm_Gcount = 0;
-int cm_Gwait1 = 0;
-int cm_Gwait2 = 0;
-
 //Hitkey関数：Dxlib標準のCheckHitKeyにキーループ機能を入れた関数
 //【第1引数】	Keycode(int)		Regist列挙(CMK_に続く列挙名を入力）
 //【第2引数】	KeyLoop(bool)		キーを押し続けた時、連続で入力するかどうか
@@ -147,3 +137,4 @@ bool HitButton(int ButtonCode, bool ButtonLoop, int ButtonLoop_Start, int Button
 		}
 	}
 };
+

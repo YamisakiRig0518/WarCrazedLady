@@ -12,7 +12,7 @@ void TitleScene::Initialize() {
 
 //å—vˆ—
 void TitleScene::Main() {
-	DrawString(0, 0, "This is Title Scene", GetColor(255, 255, 255));
+	
 };
 
 //I—¹ˆ—

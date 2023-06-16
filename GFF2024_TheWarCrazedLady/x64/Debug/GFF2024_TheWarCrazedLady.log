@@ -26,7 +26,7 @@ C:\dxlib\DxLib.h(2655,1): warning C4819: ファイルは、現在のコード �
 C:\dxlib\DxLib.h(3535,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
 C:\dxlib\DxLib.h(3763,1): warning C4819: ファイルは、現在のコード ページ (932) で表示できない文字を含んでいます。データの損失を防ぐために、ファイルを Unicode 形式で保存してください。
   コードを生成中...
-C:\Users\hayac\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Manager\ControlManager\ControlManager.cpp(90): warning C4715: 'HitKey': 値を返さないコントロール パスがあります。
-C:\Users\hayac\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Manager\ControlManager\ControlManager.cpp(148): warning C4715: 'HitButton': 値を返さないコントロール パスがあります。
-C:\Users\hayac\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(88): warning C4715: 'GetObj': 値を返さないコントロール パスがあります。
+C:\Users\hayac\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Manager\ControlManager\ControlManager.cpp(139): warning C4715: 'HitButton': 値を返さないコントロール パスがあります。
+C:\Users\hayac\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Manager\ControlManager\ControlManager.cpp(81): warning C4715: 'HitKey': 値を返さないコントロール パスがあります。
+C:\Users\hayac\Desktop\WarCrazedLady\GFF2024_TheWarCrazedLady\Main.cpp(80): warning C4715: 'GetObj': 値を返さないコントロール パスがあります。
   GFF2024_TheWarCrazedLady.vcxproj -> C:\Users\hayac\Desktop\WarCrazedLady\x64\Debug\GFF2024_TheWarCrazedLady.exe
