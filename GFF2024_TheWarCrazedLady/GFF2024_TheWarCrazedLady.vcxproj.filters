@@ -13,54 +13,69 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\SaveManager">
+    <Filter Include="ソース ファイル\マネージャー関連">
+      <UniqueIdentifier>{9adaa8a3-17d4-4b72-a1d4-88f042471a8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\マネージャー関連\セーブマネージャー">
       <UniqueIdentifier>{1528ccc9-a79e-4e63-9666-300eeb3bd44d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\TitleScene">
-      <UniqueIdentifier>{284a1d3e-0733-4c59-aed0-b0f2193400f9}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\マネージャー関連\アセットマネージャー">
+      <UniqueIdentifier>{80adfd41-0c57-4d0b-ac69-7786dbb121b6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\LogoScene">
+    <Filter Include="ソース ファイル\シーン">
+      <UniqueIdentifier>{b1f9e09e-cf7f-4eb1-bd99-38cb47c6eb4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\シーン\シーン：ロゴ表示">
       <UniqueIdentifier>{64aabd56-f7fe-421a-b554-c88947d68c3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\AssetManager">
-      <UniqueIdentifier>{80adfd41-0c57-4d0b-ac69-7786dbb121b6}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\シーン\シーン：タイトル">
+      <UniqueIdentifier>{284a1d3e-0733-4c59-aed0-b0f2193400f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\マネージャー関連\コントロールマネージャー">
+      <UniqueIdentifier>{fbb04d5e-3ee2-4a2a-bc1e-cb846efbd37e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SaveManager.cpp">
-      <Filter>ソース ファイル\SaveManager</Filter>
-    </ClCompile>
     <ClCompile Include="Scene\TitleScene\TitleScene.cpp">
-      <Filter>ソース ファイル\TitleScene</Filter>
+      <Filter>ソース ファイル\シーン\シーン：タイトル</Filter>
     </ClCompile>
     <ClCompile Include="Scene\SplashLogo\Section_ShowLogo.cpp">
-      <Filter>ソース ファイル\LogoScene</Filter>
+      <Filter>ソース ファイル\シーン\シーン：ロゴ表示</Filter>
     </ClCompile>
-    <ClCompile Include="AssetManager.cpp">
-      <Filter>ソース ファイル\AssetManager</Filter>
+    <ClCompile Include="Manager\AssetManager\AssetManager.cpp">
+      <Filter>ソース ファイル\マネージャー関連\アセットマネージャー</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\SaveManager\SaveManager.cpp">
+      <Filter>ソース ファイル\マネージャー関連\セーブマネージャー</Filter>
+    </ClCompile>
+    <ClCompile Include="Manager\ControlManager\ControlManager.cpp">
+      <Filter>ソース ファイル\マネージャー関連\コントロールマネージャー</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SaveManager.h">
-      <Filter>ソース ファイル\SaveManager</Filter>
-    </ClInclude>
     <ClInclude Include="Scene\TitleScene\TitleScene.h">
-      <Filter>ソース ファイル\TitleScene</Filter>
-    </ClInclude>
-    <ClInclude Include="TotalManager.h">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\シーン\シーン：タイトル</Filter>
     </ClInclude>
     <ClInclude Include="Scene\SplashLogo\Section_ShowLogo.h">
-      <Filter>ソース ファイル\LogoScene</Filter>
+      <Filter>ソース ファイル\シーン\シーン：ロゴ表示</Filter>
     </ClInclude>
-    <ClInclude Include="AssetManager.h">
-      <Filter>ソース ファイル\AssetManager</Filter>
+    <ClInclude Include="Manager\AssetManager\AssetManager.h">
+      <Filter>ソース ファイル\マネージャー関連\アセットマネージャー</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\SaveManager\SaveManager.h">
+      <Filter>ソース ファイル\マネージャー関連\セーブマネージャー</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\TotalManager.h">
+      <Filter>ソース ファイル\マネージャー関連</Filter>
+    </ClInclude>
+    <ClInclude Include="Manager\ControlManager\ControlManager.h">
+      <Filter>ソース ファイル\マネージャー関連\コントロールマネージャー</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

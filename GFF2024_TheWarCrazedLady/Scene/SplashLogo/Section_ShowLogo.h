@@ -1,8 +1,5 @@
 #pragma once
 #include "Main.h"
-#include "AssetManager.h"
-#include "TotalManager.h"
-
 constexpr int LogoLength = 14;
 constexpr int interval = 30; //100frame
 constexpr float fadespeed = 6.5f; // 0.25/f
@@ -12,6 +9,7 @@ public:
 	~ShowLogo() {};
 	//初期化
 	void Initialize();
+
 	//メインのメインループ
 	void Main();
 	//初期状態へ戻す関数

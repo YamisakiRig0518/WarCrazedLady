@@ -10,9 +10,10 @@
 #include <string>
 #include <vector>
 
-#include "TotalManager.h"
-#include "SaveManager.h"
-#include "AssetManager.h"
+#include "Manager/TotalManager.h"
+#include "Manager/AssetManager/AssetManager.h"
+#include "Manager/SaveManager/SaveManager.h"
+#include "Manager/ControlManager/ControlManager.h"
 
 #include "Scene/SplashLogo/Section_ShowLogo.h"
 #include "Scene/TitleScene/TitleScene.h"

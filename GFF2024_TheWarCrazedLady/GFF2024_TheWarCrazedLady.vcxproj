@@ -135,9 +135,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AssetManager.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="SaveManager.cpp" />
+    <ClCompile Include="Manager\AssetManager\AssetManager.cpp" />
+    <ClCompile Include="Manager\ControlManager\ControlManager.cpp" />
+    <ClCompile Include="Manager\SaveManager\SaveManager.cpp" />
     <ClCompile Include="Scene\SplashLogo\Section_ShowLogo.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
@@ -145,15 +146,16 @@
     <ClCompile Include="Scene\TitleScene\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AssetManager.h" />
     <ClInclude Include="Main.h" />
-    <ClInclude Include="SaveManager.h" />
+    <ClInclude Include="Manager\AssetManager\AssetManager.h" />
+    <ClInclude Include="Manager\ControlManager\ControlManager.h" />
+    <ClInclude Include="Manager\SaveManager\SaveManager.h" />
+    <ClInclude Include="Manager\TotalManager.h" />
     <ClInclude Include="Scene\SplashLogo\Section_ShowLogo.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="Scene\TitleScene\TitleScene.h" />
-    <ClInclude Include="TotalManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
