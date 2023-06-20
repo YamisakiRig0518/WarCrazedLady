@@ -22,6 +22,8 @@ ButtonStat BtnStatus[CMng_ControlKeys] = {
 	{PAD_INPUT_3		, 0 , CMG_INVENTORY	}
 };
 
+
+
 //Hitkey関数：Dxlib標準のCheckHitKeyにキーループ機能を入れた関数
 //【第1引数】	Keycode(int)		Regist列挙(CMK_に続く列挙名を入力）
 //【第2引数】	KeyLoop(bool)		キーを押し続けた時、連続で入力するかどうか
@@ -81,7 +83,7 @@ bool HitKey(int Keycode, bool ButtonLoop, int ButtonLoop_Start, int ButtonLoop_S
 };
 
 //HitButton関数：HitKey関数のゲームパッド版
-//【第1引数】	ButtonCode(int)			Regist列挙(CMG_に続く列挙名を入力）
+//【第1引数】	ButtonCode(int)		Regist列挙(CMG_に続く列挙名を入力）
 //【第2引数】	ButtonLoop(bool)		ボタンを押し続けた時、連続で入力するかどうか
 //【第3引数】	ButtonLoop_Start(int)	ボタンの連続入力を何秒後に開始するか
 //【第4引数】	ButtonLoop_Speed(int)	ボタンの連続入力の間隔(1000 = 1秒)
@@ -138,3 +140,33 @@ bool HitButton(int ButtonCode, bool ButtonLoop, int ButtonLoop_Start, int Button
 	}
 };
 
+//CheckLStick関数：左スティックで指定された方向が入力されているかチェックする
+//【第1引数】	Direction	(int)		方向指定
+//【第2引数】	KeyLoop		(bool)		傾け続けると連続で入力するようにするかどうか
+//【第3引数】	KeyLoop_Start	(int)		傾け始めてからどれくらいで連続入力を開始するか
+//【第4引数】	KeyLoop_Speed	(int)		連続入力の間隔
+bool CheckLStick(int Direction, bool KeyLoop, int KeyLoop_Start, int KeyLoop_Speed) {
+	//左スティックの入力状態を見て、実際に指定された方向にスティック入力がされているか
+	int LStick_X, LStick_Y, Rad, StickInput;
+	GetJoypadAnalogInput(&LStick_X, &LStick_Y, DX_INPUT_PAD1);
+
+	//傾き具合から倒している角度を計算
+	Rad = atan2(LStick_X, LStick_Y);
+
+	//まず左スティックを傾けているかどうか
+	if (abs(LStick_X) > 0 || abs(LStick_Y) > 0) {
+		//方向の割り出し
+		for (int DirB = 0; DirB < Directions; DirB++) {
+			if (Rad > (DirB * 45) && Rad < ((DirB * 45) + 45) && Direction == DirB) {
+				//キーの連続入力がオフの場合は一度だけ入力
+				if (!KeyLoop) {
+					return true;
+				}
+				//キーの連続入力がオンの場合
+				else if (KeyLoop) {
+					
+				}
+			}
+		}
+	}
+};
